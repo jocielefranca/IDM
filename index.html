@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDM - Inteligência de Dados e Mercado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Team Structure */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .team-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background: #667eea;
+            border: 4px solid white;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -16px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background: white;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-date {
+            color: #999;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* KPIs */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .kpi-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+        }
+
+        .kpi-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 15px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0%;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">IDM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#structure">Estrutura</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#benefits">Benefícios</a></li>
+                <li><a href="#kpis">KPIs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Inteligência de Dados e Mercado</h1>
+                <p>Transformando dados em insights estratégicos para acelerar o crescimento do negócio</p>
+                <a href="#structure" class="cta-button">Conheça Nossa Estrutura</a>
+            </div>
+        </section>
+
+        <section id="structure">
+            <div class="container">
+                <h2 class="section-title">Chapter de IDM</h2>
+                <div class="team-grid">
+                    <div class="team-card fade-in">
+                        <h3>🎯 Líder de Chapter</h3>
+                        <p><strong>Direcionamento estratégico e coordenação</strong></p>
+                        <p>Responsável pela visão estratégica e alinhamento com objetivos de negócio</p>
+                    </div>
+                    <div class="team-card fade-in">
+                        <h3>👥 Supervisora</h3>
+                        <p><strong>Gestão compartilhada com Secretaria de Vendas</strong></p>
+                        <p>Garantindo integração eficiente entre áreas comerciais</p>
+                    </div>
+                    <div class="team-card fade-in">
+                        <h3>📊 Analista de Dados</h3>
+                        <p><strong>Processamento e análise de informações</strong></p>
+                        <p>Transformando dados brutos em insights acionáveis</p>
+                    </div>
+                    <div class="team-card fade-in">
+                        <h3>🔍 Responsáveis Operacionais</h3>
+                        <p><strong>Edivânia e Lincoln</strong></p>
+                        <p>Suporte operacional, coleta de dados e estudos de mercado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap">
+            <div class="container">
+                <h2 class="section-title">Roadmap Ágil - 5 Sprints</h2>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-date">13-24 Mai 2025</div>
+                            <h3>Sprint 0: Preparação e Discovery</h3>
+                            <p>Kickoff, entrevistas com stakeholders, mapeamento de fontes de dados e definição do backlog inicial</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-date">27 Mai - 07 Jun 2025</div>
+                            <h3>Sprint 1: MVP Comercial</h3>
+                            <p>Dashboard de KPIs de conversão, análise de performance por consultor e relatórios de oportunidades em risco</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-date">10-21 Jun 2025</div>
+                            <h3>Sprint 2: Aprofundamento + Marketing</h3>
+                            <p>Modelo de propensão de fechamento, integração marketing-vendas e dashboard de origem de leads</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-date">24 Jun - 05 Jul 2025</div>
+                            <h3>Sprint 3: Relacionamento e Repasse</h3>
+                            <p>Dashboard de satisfação, NPS, análise de gargalos no repasse e indicadores de crédito</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-date">08-19 Jul 2025</div>
+                            <h3>Sprint 4: Modelos Preditivos</h3>
+                            <p>Propensão a compra, previsão de receita e automatização de insights para comercial</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <div class="timeline-date">22 Jul - 02 Ago 2025</div>
+                            <h3>Sprint 5: Consolidação e Expansão</h3>
+                            <p>Capacitação das equipes, dashboard executivo e mensuração de impactos nos KPIs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <div class="container">
+                <h2 class="section-title">Benefícios Esperados</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card fade-in">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Tomada de Decisão Assertiva</h3>
+                        <p>Redução de decisões baseadas em intuição e maior visibilidade sobre drivers de receita</p>
+                    </div>
+                    <div class="benefit-card fade-in">
+                        <div class="benefit-icon">📈</div>
+                        <h3>Eficiência Comercial</h3>
+                        <p>Direcionamento preciso de recursos e otimização de investimentos com foco em ROI</p>
+                    </div>
+                    <div class="benefit-card fade-in">
+                        <div class="benefit-icon">👥</div>
+                        <h3>Experiência do Cliente</h3>
+                        <p>Personalização da oferta e antecipação de necessidades aumentando satisfação</p>
+                    </div>
+                    <div class="benefit-card fade-in">
+                        <div class="benefit-icon">🚀</div>
+                        <h3>Vantagem Competitiva</h3>
+                        <p>Identificação antecipada de tendências e desenvolvimento de ofertas inovadoras</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kpis">
+            <div class="container">
+                <h2 class="section-title">Ganhos Esperados</h2>
+                <div class="kpis">
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">📊</div>
+                        <h3>Crescimento de Receita</h3>
+                        <p>Estratégias direcionadas por dados e otimização de precificação</p>
+                    </div>
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">🔻</div>
+                        <h3>Redução de Distratos</h3>
+                        <p>Detecção precoce e recuperação eficiente de clientes em risco</p>
+                    </div>
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">⚡</div>
+                        <h3>Eficiência Operacional</h3>
+                        <p>Redução do CAC e aumento da produtividade comercial</p>
+                    </div>
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">🏃‍♂️</div>
+                        <h3>Agilidade Estratégica</h3>
+                        <p>Identificação rápida de tendências e ciclos de ajuste mais curtos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Inteligência de Dados e Mercado. Transformando dados em resultados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactivity to the timeline
+        document.querySelectorAll('.timeline-content').forEach(content => {
+            content.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(135deg, #f8f9fa, #e9ecef)';
+            });
+            
+            content.addEventListener('mouseleave', function() {
+                this.style.background = 'white';
+            });
+        });
+    </script>
+</body>
+</html>
