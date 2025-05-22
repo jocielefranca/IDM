@@ -10,14 +10,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -34,33 +32,28 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
             color: #667eea;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover {
             color: #667eea;
         }
@@ -72,11 +65,11 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: #333;
             position: relative;
             overflow: hidden;
+            background: #f8f9fa;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -84,30 +77,28 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.3);
+            background: rgba(248, 249, 250, 0.1);
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 800px;
         }
-
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease-out;
+            color: #333;
         }
-
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-out 0.3s both;
+            color: #333;
         }
-
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            background: linear-gradient(45deg, #007bff, #0056b3);
             color: white;
             padding: 15px 30px;
             text-decoration: none;
@@ -116,7 +107,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 1s ease-out 0.6s both;
         }
-
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -127,11 +117,9 @@
             padding: 80px 0;
             background: white;
         }
-
         section:nth-child(even) {
             background: #f8f9fa;
         }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -139,7 +127,6 @@
             color: #333;
             position: relative;
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -159,7 +146,6 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-
         .team-card {
             background: white;
             padding: 2rem;
@@ -168,12 +154,10 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .team-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
-
         .team-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
@@ -185,7 +169,6 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-
         .timeline::after {
             content: '';
             position: absolute;
@@ -197,14 +180,12 @@
             margin-left: -3px;
             border-radius: 3px;
         }
-
         .timeline-item {
             padding: 10px 40px;
             position: relative;
             background: inherit;
             width: 50%;
         }
-
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -217,15 +198,12 @@
             border-radius: 50%;
             z-index: 1;
         }
-
         .timeline-item:nth-child(even) {
             left: 50%;
         }
-
         .timeline-item:nth-child(even)::after {
             left: -16px;
         }
-
         .timeline-content {
             padding: 20px 30px;
             background: white;
@@ -234,16 +212,13 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-
         .timeline-content:hover {
             transform: scale(1.02);
         }
-
         .timeline-content h3 {
             color: #667eea;
             margin-bottom: 0.5rem;
         }
-
         .timeline-date {
             color: #999;
             font-size: 0.9rem;
@@ -257,7 +232,6 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-
         .benefit-card {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -266,11 +240,9 @@
             text-align: center;
             transition: transform 0.3s;
         }
-
         .benefit-card:hover {
             transform: translateY(-5px);
         }
-
         .benefit-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
@@ -283,7 +255,6 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-
         .kpi-card {
             background: white;
             padding: 2rem;
@@ -292,7 +263,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-top: 4px solid #667eea;
         }
-
         .kpi-number {
             font-size: 2.5rem;
             font-weight: bold;
@@ -319,13 +289,11 @@
                 transform: translateY(0);
             }
         }
-
         .fade-in {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.6s ease-out;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
@@ -395,7 +363,7 @@
                     </div>
                     <div class="team-card fade-in">
                         <h3>👥 Supervisora</h3>
-                        <p><strong>Gestão compartilhada com Secretaria de Vendas</strong></p>
+                        <p><strong> Nayara Barros :: Gestão compartilhada com Secretaria de Vendas</strong></p>
                         <p>Garantindo integração eficiente entre áreas comerciais</p>
                     </div>
                     <div class="team-card fade-in">
@@ -420,42 +388,48 @@
                         <div class="timeline-content">
                             <div class="timeline-date">13-24 Mai 2025</div>
                             <h3>Sprint 0: Preparação e Discovery</h3>
-                            <p>Kickoff, entrevistas com stakeholders, mapeamento de fontes de dados e definição do backlog inicial</p>
+                            <p><strong>Foco:</strong> Alinhamento estratégico com stakeholders, mapeamento das necessidades comerciais e definição da arquitetura de dados para suportar as análises</p>
+                            <p><strong>Entregáveis:</strong> Kickoff, entrevistas com stakeholders, mapeamento de fontes de dados e definição do backlog inicial</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
                             <div class="timeline-date">27 Mai - 07 Jun 2025</div>
                             <h3>Sprint 1: MVP Comercial</h3>
-                            <p>Dashboard de KPIs de conversão, análise de performance por consultor e relatórios de oportunidades em risco</p>
+                            <p><strong>Foco:</strong> Desenvolvimento das primeiras análises comerciais essenciais - dashboards de performance de vendas, acompanhamento do funil de conversão e identificação de oportunidades em risco</p>
+                            <p><strong>Entregáveis:</strong> Dashboard de KPIs de conversão, análise de performance por consultor e relatórios de oportunidades em risco</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
                             <div class="timeline-date">10-21 Jun 2025</div>
                             <h3>Sprint 2: Aprofundamento + Marketing</h3>
-                            <p>Modelo de propensão de fechamento, integração marketing-vendas e dashboard de origem de leads</p>
+                            <p><strong>Foco:</strong> Evolução das análises comerciais com modelos preditivos e integração dos dados de marketing para visão completa da jornada do cliente desde a geração de leads até o fechamento</p>
+                            <p><strong>Entregáveis:</strong> Modelo de propensão de fechamento, integração marketing-vendas e dashboard de origem de leads</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
                             <div class="timeline-date">24 Jun - 05 Jul 2025</div>
                             <h3>Sprint 3: Relacionamento e Repasse</h3>
-                            <p>Dashboard de satisfação, NPS, análise de gargalos no repasse e indicadores de crédito</p>
+                            <p><strong>Foco:</strong> Expansão das análises para pós-venda, incluindo satisfação de clientes, NPS e otimização do processo de repasse para crédito, criando visão integrada de toda a jornada do cliente</p>
+                            <p><strong>Entregáveis:</strong> Dashboard de satisfação, NPS, análise de gargalos no repasse e indicadores de crédito</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
                             <div class="timeline-date">08-19 Jul 2025</div>
                             <h3>Sprint 4: Modelos Preditivos</h3>
-                            <p>Propensão a compra, previsão de receita e automatização de insights para comercial</p>
+                            <p><strong>Foco:</strong> Implementação de modelos avançados de machine learning para propensão de compra e previsão de receita, automatizando insights estratégicos para apoiar decisões de negócio</p>
+                            <p><strong>Entregáveis:</strong> Propensão a compra, previsão de receita e automatização de insights para comercial</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
                             <div class="timeline-date">22 Jul - 02 Ago 2025</div>
                             <h3>Sprint 5: Consolidação e Expansão</h3>
-                            <p>Capacitação das equipes, dashboard executivo e mensuração de impactos nos KPIs</p>
+                            <p><strong>Foco:</strong> Capacitação das equipes para uso autônomo das ferramentas, criação de dashboards executivos consolidados e mensuração dos impactos gerados nos KPIs de negócio</p>
+                            <p><strong>Entregáveis:</strong> Capacitação das equipes, dashboard executivo e mensuração de impactos nos KPIs</p>
                         </div>
                     </div>
                 </div>
