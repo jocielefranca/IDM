@@ -270,6 +270,160 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Training Modules */
+        .training-modules {
+            display: grid;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-left: 6px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+        }
+        
+        .module-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f1f3f4;
+        }
+        
+        .module-icon {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+        }
+        
+        .module-title {
+            color: #333;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        
+        .module-priority {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: auto;
+        }
+        
+        .training-table {
+            overflow-x: auto;
+        }
+        
+        .training-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .training-table th,
+        .training-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .training-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .training-table th:first-child {
+            border-radius: 10px 0 0 0;
+        }
+        
+        .training-table th:last-child {
+            border-radius: 0 10px 0 0;
+        }
+        
+        .training-table td {
+            font-size: 0.9rem;
+            background: #f8f9fa;
+        }
+        
+        .training-table tr:hover td {
+            background: #e3f2fd;
+        }
+        
+        .duration-badge {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .format-badge {
+            background: linear-gradient(45deg, #17a2b8, #138496);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .resource-category {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .resource-category h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .resource-category ul {
+            list-style: none;
+        }
+        
+        .resource-category li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .resource-category li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
         /* Footer */
         footer {
             background: #333;
@@ -326,6 +480,15 @@
             .nav-links {
                 display: none;
             }
+            
+            .training-table {
+                font-size: 0.8rem;
+            }
+            
+            .training-table th,
+            .training-table td {
+                padding: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -338,6 +501,7 @@
                 <li><a href="#structure">Estrutura</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#benefits">Benefícios</a></li>
+                <li><a href="#training">Capacitação</a></li>
                 <li><a href="#kpis">KPIs</a></li>
             </ul>
         </nav>
@@ -382,11 +546,11 @@
 
         <section id="roadmap">
             <div class="container">
-                <h2 class="section-title">Roadmap Ágil - 5 Sprints</h2>
+                <h2 class="section-title">Roadmap Ágil - 6 Sprints</h2>
                 <div class="timeline">
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <div class="timeline-date">13-24 Mai 2025</div>
+                            <div class="timeline-date">09-20 Jun 2025</div>
                             <h3>Sprint 0: Preparação e Discovery</h3>
                             <p><strong>Foco:</strong> Alinhamento estratégico com stakeholders, mapeamento das necessidades comerciais e definição da arquitetura de dados para suportar as análises</p>
                             <p><strong>Entregáveis:</strong> Kickoff, entrevistas com stakeholders, mapeamento de fontes de dados e definição do backlog inicial</p>
@@ -394,7 +558,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <div class="timeline-date">27 Mai - 07 Jun 2025</div>
+                            <div class="timeline-date">23 Jun - 04 Jul 2025</div>
                             <h3>Sprint 1: MVP Comercial</h3>
                             <p><strong>Foco:</strong> Desenvolvimento das primeiras análises comerciais essenciais - dashboards de performance de vendas, acompanhamento do funil de conversão e identificação de oportunidades em risco</p>
                             <p><strong>Entregáveis:</strong> Dashboard de KPIs de conversão, análise de performance por consultor e relatórios de oportunidades em risco</p>
@@ -402,7 +566,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <div class="timeline-date">10-21 Jun 2025</div>
+                            <div class="timeline-date">07-18 Jul 2025</div>
                             <h3>Sprint 2: Aprofundamento + Marketing</h3>
                             <p><strong>Foco:</strong> Evolução das análises comerciais com modelos preditivos e integração dos dados de marketing para visão completa da jornada do cliente desde a geração de leads até o fechamento</p>
                             <p><strong>Entregáveis:</strong> Modelo de propensão de fechamento, integração marketing-vendas e dashboard de origem de leads</p>
@@ -410,7 +574,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <div class="timeline-date">24 Jun - 05 Jul 2025</div>
+                            <div class="timeline-date">21 Jul - 01 Ago 2025</div>
                             <h3>Sprint 3: Relacionamento e Repasse</h3>
                             <p><strong>Foco:</strong> Expansão das análises para pós-venda, incluindo satisfação de clientes, NPS e otimização do processo de repasse para crédito, criando visão integrada de toda a jornada do cliente</p>
                             <p><strong>Entregáveis:</strong> Dashboard de satisfação, NPS, análise de gargalos no repasse e indicadores de crédito</p>
@@ -418,7 +582,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <div class="timeline-date">08-19 Jul 2025</div>
+                            <div class="timeline-date">04-15 Ago 2025</div>
                             <h3>Sprint 4: Modelos Preditivos</h3>
                             <p><strong>Foco:</strong> Implementação de modelos avançados de machine learning para propensão de compra e previsão de receita, automatizando insights estratégicos para apoiar decisões de negócio</p>
                             <p><strong>Entregáveis:</strong> Propensão a compra, previsão de receita e automatização de insights para comercial</p>
@@ -426,7 +590,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <div class="timeline-date">22 Jul - 02 Ago 2025</div>
+                            <div class="timeline-date">18-29 Ago 2025</div>
                             <h3>Sprint 5: Consolidação e Expansão</h3>
                             <p><strong>Foco:</strong> Capacitação das equipes para uso autônomo das ferramentas, criação de dashboards executivos consolidados e mensuração dos impactos gerados nos KPIs de negócio</p>
                             <p><strong>Entregáveis:</strong> Capacitação das equipes, dashboard executivo e mensuração de impactos nos KPIs</p>
@@ -459,6 +623,361 @@
                         <div class="benefit-icon">🚀</div>
                         <h3>Vantagem Competitiva</h3>
                         <p>Identificação antecipada de tendências e desenvolvimento de ofertas inovadoras</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="training">
+            <div class="container">
+                <h2 class="section-title">Plano de Capacitação</h2>
+                <div class="training-modules">
+                    
+                    <!-- Módulo 1: Metodologia Ágil -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">🚀</div>
+                            <div class="module-title">Módulo 1: Metodologia Ágil</div>
+                            <div class="module-priority">PRIORIDADE</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fundamentos do Scrum e Agilidade</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Facilitador externo / Interno</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kanban na Prática</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">4h</span></td>
+                                        <td>Trello ou Jira, templates</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Histórias de Usuário e Backlog</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">4h</span></td>
+                                        <td>Templates, exemplos práticos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rituais Ágeis na Prática</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Simulação prática</span></td>
+                                        <td><span class="duration-badge">4h</span></td>
+                                        <td>Facilitador externo / Interno</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Métricas Ágeis e Quadros de Gestão Visual</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">4h</span></td>
+                                        <td>Ferramentas de gestão visual</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Planejamento e Estimativas Ágeis</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop + exercícios</span></td>
+                                        <td><span class="duration-badge">6h</span></td>
+                                        <td>Templates de planning poker</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Papel do Product Owner</td>
+                                        <td>Supervisora</td>
+                                        <td><span class="format-badge">Treinamento específico</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Mentora</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coaching Ágil e Resolução de Impedimentos</td>
+                                        <td>Supervisora</td>
+                                        <td><span class="format-badge">Sessões de coaching</span></td>
+                                        <td><span class="duration-badge">6h</span></td>
+                                        <td>Mentora</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 3: Ferramentas e Tecnologias -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">🛠️</div>
+                            <div class="module-title">Módulo 3: Ferramentas e Tecnologias</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Excel Avançado e Power Query</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">12h</span></td>
+                                        <td>Computadores, datasets de vendas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Power BI Fundamental</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Curso online + workshop</span></td>
+                                        <td><span class="duration-badge">20h</span></td>
+                                        <td>Licenças Power BI, dados internos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Power BI Avançado e DAX</td>
+                                        <td>Analista Sênior e Supervisora</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python para Análise de Dados</td>
+                                        <td>Analista Sênior</td>
+                                        <td><span class="format-badge">Curso online + mentoria</span></td>
+                                        <td><span class="duration-badge">40h</span></td>
+                                        <td>Ambiente de desenvolvimento</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ferramentas de Gestão Ágil (Jira/Trello)</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop prático</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Acesso às ferramentas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 4: Inteligência de Mercado -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">🎯</div>
+                            <div class="module-title">Módulo 4: Inteligência de Mercado e Negócios</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fundamentos do Mercado Imobiliário</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Especialista do negócio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KPIs e Métricas do Setor Imobiliário</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Benchmarks do setor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Customer Journey e Experiência do Cliente</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Análise Competitiva e Market Intelligence</td>
+                                        <td>Analista Sênior e Supervisora</td>
+                                        <td><span class="format-badge">Curso online</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Acesso plataforma online</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Precificação Estratégica no Setor Imobiliário</td>
+                                        <td>Supervisora</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 5: IA e Analytics Avançado -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">🤖</div>
+                            <div class="module-title">Módulo 5: Inteligência Artificial e Analytics Avançado</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fundamentos de IA para Negócios</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Machine Learning Aplicado a Vendas</td>
+                                        <td>Analista Sênior e Supervisora</td>
+                                        <td><span class="format-badge">Curso online</span></td>
+                                        <td><span class="duration-badge">20h</span></td>
+                                        <td>Acesso plataforma online</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Introdução a Modelos Preditivos</td>
+                                        <td>Analista Sênior</td>
+                                        <td><span class="format-badge">Workshop externo + projeto</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IA Generativa para Análise de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Acesso a ferramentas de IA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Integração de IA com Ferramentas de BI</td>
+                                        <td>Analista Sênior</td>
+                                        <td><span class="format-badge">Workshop prático</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Power BI, Python</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Treinamentos Práticos Integrados -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">⚡</div>
+                            <div class="module-title">Treinamentos Práticos Integrados (Ágil + Dados)</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Aplicando Ágil em Projetos de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop prático</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Estudo de caso real da empresa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sprint de Análise de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Prática supervisionada</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Dados reais, ambiente de análise</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Criação de MVP de Dashboard</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Projeto prático</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Power BI, dados comerciais</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hackathon de Dados - Problema Real</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Desafio prático</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Problema de negócio específico</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prática de Review e Retrospectiva</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Simulação</span></td>
+                                        <td><span class="duration-badge">4h</span></td>
+                                        <td>Ambiente de trabalho</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recursos para Agilidade -->
+                    <div class="resources-section fade-in">
+                        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">🛠️ Recursos para Agilidade</h3>
+                        <div class="resources-grid">
+                            <div class="resource-category">
+                                <h4>Ferramentas para Gestão Ágil</h4>
+                                <ul>
+                                    <li><strong>Iniciando:</strong> Trello, Asana</li>
+                                    <li><strong>Avançando:</strong> Jira Software, Azure DevOps</li>
+                                </ul>
+                            </div>
+                            <div class="resource-category">
+                                <h4>Visualização e Colaboração</h4>
+                                <ul>
+                                    <li><strong>Design Thinking:</strong> Miro, Figma</li>
+                                    <li><strong>Documentação:</strong> Notion</li>
+                                </ul>
+                            </div>
+                            <div class="resource-category">
+                                <h4>Análise e Dados</h4>
+                                <ul>
+                                    <li><strong>BI:</strong> Power BI, Tableau</li>
+                                    <li><strong>Programação:</strong> Python, R</li>
+                                </ul>
+                            </div>
+                            <div class="resource-category">
+                                <h4>Comunicação</h4>
+                                <ul>
+                                    <li><strong>Reuniões:</strong> Teams, Zoom</li>
+                                    <li><strong>Chat:</strong> Slack, Teams</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -542,6 +1061,85 @@
                 this.style.background = 'white';
             });
         });
+
+        // Enhanced interactivity for training modules
+        document.querySelectorAll('.module-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderLeft = '6px solid #764ba2';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderLeft = '6px solid #667eea';
+            });
+        });
+
+        // Add click-to-expand functionality for training tables
+        document.querySelectorAll('.module-card').forEach(card => {
+            const header = card.querySelector('.module-header');
+            const table = card.querySelector('.training-table');
+            
+            header.style.cursor = 'pointer';
+            header.addEventListener('click', function() {
+                if (table.style.display === 'none') {
+                    table.style.display = 'block';
+                    card.style.transform = 'scale(1.02)';
+                } else {
+                    table.style.display = 'none';
+                    card.style.transform = 'scale(1)';
+                }
+            });
+        });
     </script>
 </body>
 </html>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 2: Fundamentos de Dados -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">📊</div>
+                            <div class="module-title">Módulo 2: Fundamentos de Dados e Análise</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fundamentos de Análise de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">6h</span></td>
+                                        <td>Apostila, datasets de exemplo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Visualização de Dados e Storytelling</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estatística Aplicada a Negócios</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Curso online + projeto</span></td>
+                                        <td><span class="duration-badge">30h</span></td>
+                                        <td>Acesso plataforma online, dados internos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modelos de Atribuição e Funil de Vendas</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Cases do mercado imobiliário</td>
+                                    </tr>
+                                </tbody>
